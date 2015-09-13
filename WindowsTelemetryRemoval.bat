@@ -21,6 +21,12 @@ wusa /uninstall /kb:3044374 /quiet /norestart > NUL
 echo Uninstalling Update for customer experience and diagnostic telemetry (KB3068708)
 wusa /uninstall /kb:3068708 /quiet /norestart > NUL
 
+echo Uninstalling Update that adds telemetry points to consent.exe in Windows 8.1 and Windows 7 (KB3075249)
+wusa /uninstall /kb:3075249 /quiet /norestart > NUL
+
+echo Uninstalling Update for customer experience and diagnostic telemetry (KB3080149)
+wusa /uninstall /kb:3080149 /quiet /norestart > NUL
+
 echo Uninstalling Description of the update for Windows Activation Technologies (KB971033)
 wusa /uninstall /kb:971033 /quiet /norestart > NUL
 
@@ -46,6 +52,8 @@ schtasks /Change /TN "\Microsoft\Windows\Maintenance\WinSAT" /DISABLE > NUL
 echo Done.
 echo.
 echo Please go to Control Panel ^> Windows Update and hide the following updates:
-echo KB2952664, KB2990214, KB3021917, KB3022345, KB3035583, KB3044374, KB3068708 and KB971033
+echo KB2952664, KB2990214, KB3021917, KB3022345, KB3035583, KB3044374, KB3068708,
+echo KB3075249, KB3080149 and KB971033
+echo.
 
 pause
