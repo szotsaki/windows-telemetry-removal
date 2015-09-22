@@ -55,6 +55,61 @@ schtasks /Change /TN "\Microsoft\Windows\DiskDiagnostic\Microsoft-Windows-DiskDi
 
 schtasks /Change /TN "\Microsoft\Windows\Maintenance\WinSAT" /DISABLE > NUL 2> NUL
 
+echo Disabling Microsoft telemetry sites in hosts file
+SET HOSTS="%SystemRoot%\system32\drivers\etc\hosts"
+echo. >> %HOSTS%
+
+type %HOSTS% | findstr /I "131.107.255.255" > NUL || echo 127.0.0.1	131.107.255.255 >> %HOSTS%
+type %HOSTS% | findstr /I "134.170.30.202" > NUL || echo 127.0.0.1	134.170.30.202 >> %HOSTS%
+type %HOSTS% | findstr /I "137.116.81.24" > NUL || echo 127.0.0.1	137.116.81.24 >> %HOSTS%
+type %HOSTS% | findstr /I "204.79.197.200" > NUL || echo 127.0.0.1	204.79.197.200 >> %HOSTS%
+type %HOSTS% | findstr /I "23.218.212.69" > NUL || echo 127.0.0.1	23.218.212.69 >> %HOSTS%
+type %HOSTS% | findstr /I "65.39.117.230" > NUL || echo 127.0.0.1	65.39.117.230 >> %HOSTS%
+type %HOSTS% | findstr /I "65.55.108.23" > NUL || echo 127.0.0.1	65.55.108.23 >> %HOSTS%
+type %HOSTS% | findstr /I "a-0001.a-msedge.net" > NUL || echo 127.0.0.1	a-0001.a-msedge.net >> %HOSTS%
+type %HOSTS% | findstr /I "choice.microsoft.com" > NUL || echo 127.0.0.1	choice.microsoft.com >> %HOSTS%
+type %HOSTS% | findstr /I "choice.microsoft.com.nsatc.net" > NUL || echo 127.0.0.1	choice.microsoft.com.nsatc.net >> %HOSTS%
+type %HOSTS% | findstr /I "compatexchange.cloudapp.net" > NUL || echo 127.0.0.1	compatexchange.cloudapp.net >> %HOSTS%
+type %HOSTS% | findstr /I "corp.sts.microsoft.com" > NUL || echo 127.0.0.1	corp.sts.microsoft.com >> %HOSTS%
+type %HOSTS% | findstr /I "corpext.msitadfs.glbdns2.microsoft.com" > NUL || echo 127.0.0.1	corpext.msitadfs.glbdns2.microsoft.com >> %HOSTS%
+type %HOSTS% | findstr /I "cs1.wpc.v0cdn.net" > NUL || echo 127.0.0.1	cs1.wpc.v0cdn.net >> %HOSTS%
+type %HOSTS% | findstr /I "df.telemetry.microsoft.com" > NUL || echo 127.0.0.1	df.telemetry.microsoft.com >> %HOSTS%
+type %HOSTS% | findstr /I "diagnostics.support.microsoft.com" > NUL || echo 127.0.0.1	diagnostics.support.microsoft.com >> %HOSTS%
+type %HOSTS% | findstr /I "dns.msftncsi.com" > NUL || echo 127.0.0.1	dns.msftncsi.com >> %HOSTS%
+type %HOSTS% | findstr /I "fe2.update.microsoft.com.akadns.net" > NUL || echo 127.0.0.1	fe2.update.microsoft.com.akadns.net >> %HOSTS%
+type %HOSTS% | findstr /I "feedback.microsoft-hohm.com" > NUL || echo 127.0.0.1	feedback.microsoft-hohm.com >> %HOSTS%
+type %HOSTS% | findstr /I "feedback.search.microsoft.com" > NUL || echo 127.0.0.1	feedback.search.microsoft.com >> %HOSTS%
+type %HOSTS% | findstr /I "feedback.windows.com" > NUL || echo 127.0.0.1	feedback.windows.com >> %HOSTS%
+type %HOSTS% | findstr /I "i1.services.social.microsoft.com" > NUL || echo 127.0.0.1	i1.services.social.microsoft.com >> %HOSTS%
+type %HOSTS% | findstr /I "i1.services.social.microsoft.com.nsatc.net" > NUL || echo 127.0.0.1	i1.services.social.microsoft.com.nsatc.net >> %HOSTS%
+type %HOSTS% | findstr /I "oca.telemetry.microsoft.com" > NUL || echo 127.0.0.1	oca.telemetry.microsoft.com >> %HOSTS%
+type %HOSTS% | findstr /I "oca.telemetry.microsoft.com.nsatc.net" > NUL || echo 127.0.0.1	oca.telemetry.microsoft.com.nsatc.net >> %HOSTS%
+type %HOSTS% | findstr /I "pre.footprintpredict.com" > NUL || echo 127.0.0.1	pre.footprintpredict.com >> %HOSTS%
+type %HOSTS% | findstr /I "redir.metaservices.microsoft.com" > NUL || echo 127.0.0.1	redir.metaservices.microsoft.com >> %HOSTS%
+type %HOSTS% | findstr /I "reports.wes.df.telemetry.microsoft.com" > NUL || echo 127.0.0.1	reports.wes.df.telemetry.microsoft.com >> %HOSTS%
+type %HOSTS% | findstr /I "services.wes.df.telemetry.microsoft.com" > NUL || echo 127.0.0.1	services.wes.df.telemetry.microsoft.com >> %HOSTS%
+type %HOSTS% | findstr /I "settings-sandbox.data.microsoft.com" > NUL || echo 127.0.0.1	settings-sandbox.data.microsoft.com >> %HOSTS%
+type %HOSTS% | findstr /I "sls.update.microsoft.com.akadns.net" > NUL || echo 127.0.0.1	sls.update.microsoft.com.akadns.net >> %HOSTS%
+type %HOSTS% | findstr /I "sqm.df.telemetry.microsoft.com" > NUL || echo 127.0.0.1	sqm.df.telemetry.microsoft.com >> %HOSTS%
+type %HOSTS% | findstr /I "sqm.telemetry.microsoft.com" > NUL || echo 127.0.0.1	sqm.telemetry.microsoft.com >> %HOSTS%
+type %HOSTS% | findstr /I "sqm.telemetry.microsoft.com.nsatc.net" > NUL || echo 127.0.0.1	sqm.telemetry.microsoft.com.nsatc.net >> %HOSTS%
+type %HOSTS% | findstr /I "statsfe1.ws.microsoft.com" > NUL || echo 127.0.0.1	statsfe1.ws.microsoft.com >> %HOSTS%
+type %HOSTS% | findstr /I "statsfe2.update.microsoft.com.akadns.net" > NUL || echo 127.0.0.1	statsfe2.update.microsoft.com.akadns.net >> %HOSTS%
+type %HOSTS% | findstr /I "statsfe2.ws.microsoft.com" > NUL || echo 127.0.0.1	statsfe2.ws.microsoft.com >> %HOSTS%
+type %HOSTS% | findstr /I "survey.watson.microsoft.com" > NUL || echo 127.0.0.1	survey.watson.microsoft.com >> %HOSTS%
+type %HOSTS% | findstr /I "telecommand.telemetry.microsoft.com" > NUL || echo 127.0.0.1	telecommand.telemetry.microsoft.com >> %HOSTS%
+type %HOSTS% | findstr /I "telecommand.telemetry.microsoft.com.nsatc.net" > NUL || echo 127.0.0.1	telecommand.telemetry.microsoft.com.nsatc.net >> %HOSTS%
+type %HOSTS% | findstr /I "telemetry.appex.bing.net" > NUL || echo 127.0.0.1	telemetry.appex.bing.net >> %HOSTS%
+type %HOSTS% | findstr /I "telemetry.appex.bing.net:443" > NUL || echo 127.0.0.1	telemetry.appex.bing.net:443 >> %HOSTS%
+type %HOSTS% | findstr /I "telemetry.urs.microsoft.com" > NUL || echo 127.0.0.1	telemetry.urs.microsoft.com >> %HOSTS%
+type %HOSTS% | findstr /I "vortex-sandbox.data.microsoft.com" > NUL || echo 127.0.0.1	vortex-sandbox.data.microsoft.com >> %HOSTS%
+type %HOSTS% | findstr /I "vortex-win.data.microsoft.com" > NUL || echo 127.0.0.1	vortex-win.data.microsoft.com >> %HOSTS%
+type %HOSTS% | findstr /I "vortex.data.microsoft.com" > NUL || echo 127.0.0.1	vortex.data.microsoft.com >> %HOSTS%
+type %HOSTS% | findstr /I "watson.live.com" > NUL || echo 127.0.0.1	watson.live.com >> %HOSTS%
+type %HOSTS% | findstr /I "watson.ppe.telemetry.microsoft.com" > NUL || echo 127.0.0.1	watson.ppe.telemetry.microsoft.com >> %HOSTS%
+type %HOSTS% | findstr /I "watson.telemetry.microsoft.com" > NUL || echo 127.0.0.1	watson.telemetry.microsoft.com >> %HOSTS%
+type %HOSTS% | findstr /I "watson.telemetry.microsoft.com.nsatc.net" > NUL || echo 127.0.0.1	watson.telemetry.microsoft.com.nsatc.net >> %HOSTS%
+
 echo Done.
 echo.
 echo Please go to Control Panel ^> Windows Update and hide the following updates:
