@@ -41,19 +41,19 @@ sc stop Diagtrack > NUL
 sc delete Diagtrack > NUL
 
 echo Disabling data collecting and reporting tasks
-schtasks /Change /TN "\Microsoft\Windows\Application Experience\AitAgent" /DISABLE > NUL
-schtasks /Change /TN "\Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser" /DISABLE > NUL
-schtasks /Change /TN "\Microsoft\Windows\Application Experience\ProgramDataUpdater" /DISABLE > NUL
+schtasks /Change /TN "\Microsoft\Windows\Application Experience\AitAgent" /DISABLE > NUL 2> NUL
+schtasks /Change /TN "\Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser" /DISABLE > NUL 2> NUL
+schtasks /Change /TN "\Microsoft\Windows\Application Experience\ProgramDataUpdater" /DISABLE > NUL 2> NUL
 
-schtasks /Change /TN "\Microsoft\Windows\Autochk\Proxy" /DISABLE > NUL
+schtasks /Change /TN "\Microsoft\Windows\Autochk\Proxy" /DISABLE > NUL 2> NUL
 
-schtasks /Change /TN "\Microsoft\Windows\Customer Experience Improvement Program\Consolidator" /DISABLE > NUL
-schtasks /Change /TN "\Microsoft\Windows\Customer Experience Improvement Program\KernelCeipTask" /DISABLE > NUL
-schtasks /Change /TN "\Microsoft\Windows\Customer Experience Improvement Program\UsbCeip" /DISABLE > NUL
+schtasks /Change /TN "\Microsoft\Windows\Customer Experience Improvement Program\Consolidator" /DISABLE > NUL 2> NUL
+schtasks /Change /TN "\Microsoft\Windows\Customer Experience Improvement Program\KernelCeipTask" /DISABLE > NUL 2> NUL
+schtasks /Change /TN "\Microsoft\Windows\Customer Experience Improvement Program\UsbCeip" /DISABLE > NUL 2> NUL
 
-schtasks /Change /TN "\Microsoft\Windows\DiskDiagnostic\Microsoft-Windows-DiskDiagnosticDataCollector" /DISABLE > NUL
+schtasks /Change /TN "\Microsoft\Windows\DiskDiagnostic\Microsoft-Windows-DiskDiagnosticDataCollector" /DISABLE > NUL 2> NUL
 
-schtasks /Change /TN "\Microsoft\Windows\Maintenance\WinSAT" /DISABLE > NUL
+schtasks /Change /TN "\Microsoft\Windows\Maintenance\WinSAT" /DISABLE > NUL 2> NUL
 
 echo Done.
 echo.
