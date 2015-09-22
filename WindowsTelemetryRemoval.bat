@@ -3,6 +3,12 @@
 echo Uninstalling Compatibility update for upgrading Windows 7 (KB2952664)
 wusa /uninstall /kb:2952664 /quiet /norestart > NUL
 
+echo Uninstalling Compatibility update for Windows 8.1 and Windows 8 (KB2976978)
+wusa /uninstall /kb:2976978 /quiet /norestart > NUL
+
+echo Uninstalling Compatibility update for Windows 7 RTM (KB2977759)
+wusa /uninstall /kb:2977759 /quiet /norestart > NUL
+
 echo Uninstalling Update that enables you to upgrade from Windows 7 to a later version of Windows (KB2990214)
 wusa /uninstall /kb:2990214 /quiet /norestart > NUL
 
@@ -52,8 +58,8 @@ schtasks /Change /TN "\Microsoft\Windows\Maintenance\WinSAT" /DISABLE > NUL
 echo Done.
 echo.
 echo Please go to Control Panel ^> Windows Update and hide the following updates:
-echo KB2952664, KB2990214, KB3021917, KB3022345, KB3035583, KB3044374, KB3068708,
-echo KB3075249, KB3080149 and KB971033
+echo KB2952664, KB2976978, KB2977759, KB2990214, KB3021917, KB3022345, KB3035583,
+echo KB3044374, KB3068708, KB3075249, KB3080149 and KB971033
 echo.
 
 pause
