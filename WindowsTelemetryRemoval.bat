@@ -55,6 +55,13 @@ schtasks /Change /TN "\Microsoft\Windows\DiskDiagnostic\Microsoft-Windows-DiskDi
 
 schtasks /Change /TN "\Microsoft\Windows\Maintenance\WinSAT" /DISABLE > NUL 2> NUL
 
+echo Disabling "Get Windows 10" application and automatic updates
+REG ADD HKLM\SOFTWARE\Policies\Microsoft\Windows\Gwx /v DisableGwx /t REG_DWORD /d 00000001 /f
+REG ADD HKLM\Software\Microsoft\Windows\CurrentVersion\WindowsUpdate\OSUpgrade /v ReservationsAllowed  /t REG_DWORD /d 00000000 /f
+
+rem It has effect only with 3065987 or 3065988 updates installed
+REG ADD HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate /v DisableOSUpgrade /t REG_DWORD /d 00000001 /f
+
 echo Disabling Microsoft telemetry sites in hosts file
 SET HOSTS="%SystemRoot%\system32\drivers\etc\hosts"
 echo. >> %HOSTS%
