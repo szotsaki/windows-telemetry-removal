@@ -69,6 +69,22 @@ REG ADD HKLM\Software\Microsoft\Windows\CurrentVersion\WindowsUpdate\OSUpgrade /
 rem It has effect only with 3065987 or 3065988 updates installed
 REG ADD HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate /v DisableOSUpgrade /t REG_DWORD /d 00000001 /f
 
+schtasks /CHANGE /TN "\Microsoft\Windows\Setup\GWXTriggers\Logon-5d" /DISABLE  > NUL 2> NUL
+schtasks /CHANGE /TN "\Microsoft\Windows\Setup\GWXTriggers\Logon-10s" /DISABLE  > NUL 2> NUL
+schtasks /CHANGE /TN "\Microsoft\Windows\Setup\GWXTriggers\MachineUnlock-5d" /DISABLE  > NUL 2> NUL
+schtasks /CHANGE /TN "\Microsoft\Windows\Setup\GWXTriggers\MachineUnlock-10s" /DISABLE  > NUL 2> NUL
+schtasks /CHANGE /TN "\Microsoft\Windows\Setup\GWXTriggers\OutOfIdle-5d" /DISABLE  > NUL 2> NUL
+schtasks /CHANGE /TN "\Microsoft\Windows\Setup\GWXTriggers\OutOfIdle-10s" /DISABLE  > NUL 2> NUL
+schtasks /CHANGE /TN "\Microsoft\Windows\Setup\GWXTriggers\OutOfSleep-5d" /DISABLE  > NUL 2> NUL
+schtasks /CHANGE /TN "\Microsoft\Windows\Setup\GWXTriggers\OutOfSleep-10s" /DISABLE  > NUL 2> NUL
+schtasks /CHANGE /TN "\Microsoft\Windows\Setup\GWXTriggers\Time-5d" /DISABLE  > NUL 2> NUL
+schtasks /CHANGE /TN "\Microsoft\Windows\Setup\GWXTriggers\Time-10s" /DISABLE  > NUL 2> NUL
+schtasks /CHANGE /TN "\Microsoft\Windows\Setup\GWXTriggers\refreshgwxconfig-B" /DISABLE  > NUL 2> NUL
+schtasks /CHANGE /TN "\Microsoft\Windows\Setup\GWXTriggers\Telemetry-4xd" /DISABLE  > NUL 2> NUL
+schtasks /CHANGE /TN "\Microsoft\Windows\Setup\gwx\refreshgwxconfigandcontent" /DISABLE  > NUL 2> NUL
+schtasks /CHANGE /TN "\Microsoft\Windows\Setup\gwx\launchtrayprocess" /DISABLE  > NUL 2> NUL
+schtasks /CHANGE /TN "\Microsoft\Windows\Setup\gwx\refreshgwxconfig" /DISABLE  > NUL 2> NUL
+
 echo Disabling Microsoft telemetry sites in hosts file
 SET HOSTS="%SystemRoot%\system32\drivers\etc\hosts"
 echo. >> %HOSTS%
