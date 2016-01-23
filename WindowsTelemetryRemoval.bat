@@ -45,6 +45,7 @@ wusa /uninstall /kb:971033 /quiet /norestart > NUL
 echo Stopping and deleting Windows Diagnostic Tracking Service
 sc stop Diagtrack > NUL
 sc delete Diagtrack > NUL
+echo. > C:\ProgramData\Microsoft\Diagnosis\ETLLogs\AutoLogger\AutoLogger-Diagtrack-Listener.etl
 
 echo Disabling data collecting and reporting tasks
 schtasks /Change /TN "\Microsoft\Windows\Application Experience\AitAgent" /DISABLE > NUL 2> NUL
