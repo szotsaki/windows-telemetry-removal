@@ -33,11 +33,14 @@ wusa /uninstall /kb:3075249 /quiet /norestart > NUL
 echo Uninstalling Update for customer experience and diagnostic telemetry (KB3080149)
 wusa /uninstall /kb:3080149 /quiet /norestart > NUL
 
-Windows Update Client for Windows 8.1 and Windows Server 2012 R2: December 2015 (KB3112336)
+echo Windows Update Client for Windows 8.1 and Windows Server 2012 R2: December 2015 (KB3112336)
 wusa /uninstall /kb:3112336 /quiet /norestart > NUL
 
 echo Windows Update Client for Windows 7 and Windows Server 2008 R2: December 2015 (KB3112343)
 wusa /uninstall /kb:3112343 /quiet /norestart > NUL
+
+echo Updated capabilities to upgrade Windows 8.1 and Windows 7 (KB3123862)
+wusa /uninstall /kb:3123862 /quiet /norestart > NUL
 
 echo Uninstalling Description of the update for Windows Activation Technologies (KB971033)
 wusa /uninstall /kb:971033 /quiet /norestart > NUL
@@ -144,7 +147,8 @@ echo Done.
 echo.
 echo Please go to Control Panel ^> Windows Update and hide the following updates:
 echo KB2952664, KB2976978, KB2977759, KB2990214, KB3021917, KB3022345, KB3035583,
-echo KB3044374, KB3068708, KB3075249, KB3080149, KB3112336, KB3112343 and KB971033
+echo KB3044374, KB3068708, KB3075249, KB3080149, KB3112336, KB3112343, KB3123862,
+echo and KB971033
 echo.
 
 pause
