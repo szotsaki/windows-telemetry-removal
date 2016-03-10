@@ -45,6 +45,15 @@ wusa /uninstall /kb:3123862 /quiet /norestart > NUL
 echo Windows Update Client for Windows 7 and Windows Server 2008 R2: February 2016 (KB3135445)
 wusa /uninstall /kb:3135445 /quiet /norestart > NUL
 
+echo Windows Update Client for Windows 8.1 and Windows Server 2012 R2: February 2016 (KB3135449)
+wusa /uninstall /kb:3135449 /quiet /norestart > NUL
+
+echo Windows Update Client for Windows 7 and Windows Server 2008 R2: March 2016 (KB3138612)
+wusa /uninstall /kb:3138612 /quiet /norestart > NUL
+
+echo Windows Update Client for Windows 8.1 and Windows Server 2012 R2: March 2016 (KB3138615)
+wusa /uninstall /kb:3138615 /quiet /norestart > NUL
+
 echo Uninstalling Description of the update for Windows Activation Technologies (KB971033)
 wusa /uninstall /kb:971033 /quiet /norestart > NUL
 
@@ -151,7 +160,7 @@ echo.
 echo Please go to Control Panel ^> Windows Update and hide the following updates:
 echo KB2952664, KB2976978, KB2977759, KB2990214, KB3021917, KB3022345, KB3035583,
 echo KB3044374, KB3068708, KB3075249, KB3080149, KB3112336, KB3112343, KB3123862,
-echo KB3135445, and KB971033
+echo KB3135445, KB3135449, KB3138612, KB3138615 and KB971033
 echo.
 
 pause
