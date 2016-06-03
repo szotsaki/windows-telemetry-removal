@@ -104,13 +104,15 @@ echo Disabling Microsoft telemetry sites in hosts file
 SET HOSTS="%SystemRoot%\system32\drivers\etc\hosts"
 echo. >> %HOSTS%
 
-type %HOSTS% | findstr /I "131.107.255.255" > NUL || echo 127.0.0.1	131.107.255.255 >> %HOSTS%
-type %HOSTS% | findstr /I "134.170.30.202" > NUL || echo 127.0.0.1	134.170.30.202 >> %HOSTS%
-type %HOSTS% | findstr /I "137.116.81.24" > NUL || echo 127.0.0.1	137.116.81.24 >> %HOSTS%
-type %HOSTS% | findstr /I "204.79.197.200" > NUL || echo 127.0.0.1	204.79.197.200 >> %HOSTS%
-type %HOSTS% | findstr /I "23.218.212.69" > NUL || echo 127.0.0.1	23.218.212.69 >> %HOSTS%
-type %HOSTS% | findstr /I "65.39.117.230" > NUL || echo 127.0.0.1	65.39.117.230 >> %HOSTS%
-type %HOSTS% | findstr /I "65.55.108.23" > NUL || echo 127.0.0.1	65.55.108.23 >> %HOSTS%
+rem Also telemetry sites but not possible to disable via hosts
+rem 131.107.255.255
+rem 134.170.30.202
+rem 137.116.81.24
+rem 204.79.197.200
+rem 23.218.212.69
+rem 65.39.117.230
+rem 65.55.108.23
+
 type %HOSTS% | findstr /I "a-0001.a-msedge.net" > NUL || echo 127.0.0.1	a-0001.a-msedge.net >> %HOSTS%
 type %HOSTS% | findstr /I "choice.microsoft.com" > NUL || echo 127.0.0.1	choice.microsoft.com >> %HOSTS%
 type %HOSTS% | findstr /I "choice.microsoft.com.nsatc.net" > NUL || echo 127.0.0.1	choice.microsoft.com.nsatc.net >> %HOSTS%
@@ -145,7 +147,7 @@ type %HOSTS% | findstr /I "survey.watson.microsoft.com" > NUL || echo 127.0.0.1	
 type %HOSTS% | findstr /I "telecommand.telemetry.microsoft.com" > NUL || echo 127.0.0.1	telecommand.telemetry.microsoft.com >> %HOSTS%
 type %HOSTS% | findstr /I "telecommand.telemetry.microsoft.com.nsatc.net" > NUL || echo 127.0.0.1	telecommand.telemetry.microsoft.com.nsatc.net >> %HOSTS%
 type %HOSTS% | findstr /I "telemetry.appex.bing.net" > NUL || echo 127.0.0.1	telemetry.appex.bing.net >> %HOSTS%
-type %HOSTS% | findstr /I "telemetry.appex.bing.net:443" > NUL || echo 127.0.0.1	telemetry.appex.bing.net:443 >> %HOSTS%
+type %HOSTS% | findstr /I "telemetry.appex.bing.net" > NUL || echo 127.0.0.1	telemetry.appex.bing.net >> %HOSTS%
 type %HOSTS% | findstr /I "telemetry.urs.microsoft.com" > NUL || echo 127.0.0.1	telemetry.urs.microsoft.com >> %HOSTS%
 type %HOSTS% | findstr /I "vortex-sandbox.data.microsoft.com" > NUL || echo 127.0.0.1	vortex-sandbox.data.microsoft.com >> %HOSTS%
 type %HOSTS% | findstr /I "vortex-win.data.microsoft.com" > NUL || echo 127.0.0.1	vortex-win.data.microsoft.com >> %HOSTS%
