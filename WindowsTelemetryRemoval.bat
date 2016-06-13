@@ -58,8 +58,8 @@ echo Uninstalling Description of the update for Windows Activation Technologies 
 wusa /uninstall /kb:971033 /quiet /norestart > NUL
 
 echo Stopping and deleting Windows Diagnostic Tracking Service
-sc stop Diagtrack > NUL
-sc delete Diagtrack > NUL
+sc stop Diagtrack > NUL 2> NUL
+sc delete Diagtrack > NUL 2> NUL
 echo. > C:\ProgramData\Microsoft\Diagnosis\ETLLogs\AutoLogger\AutoLogger-Diagtrack-Listener.etl
 
 echo Disabling data collecting and reporting tasks
@@ -78,11 +78,11 @@ schtasks /Change /TN "\Microsoft\Windows\DiskDiagnostic\Microsoft-Windows-DiskDi
 schtasks /Change /TN "\Microsoft\Windows\Maintenance\WinSAT" /DISABLE > NUL 2> NUL
 
 echo Disabling "Get Windows 10" application and automatic updates
-REG ADD HKLM\SOFTWARE\Policies\Microsoft\Windows\Gwx /v DisableGwx /t REG_DWORD /d 00000001 /f
-REG ADD HKLM\Software\Microsoft\Windows\CurrentVersion\WindowsUpdate\OSUpgrade /v ReservationsAllowed  /t REG_DWORD /d 00000000 /f
+REG ADD HKLM\SOFTWARE\Policies\Microsoft\Windows\Gwx /v DisableGwx /t REG_DWORD /d 00000001 /f > NUL
+REG ADD HKLM\Software\Microsoft\Windows\CurrentVersion\WindowsUpdate\OSUpgrade /v ReservationsAllowed  /t REG_DWORD /d 00000000 /f > NUL
 
 rem It has effect only with 3065987 or 3065988 updates installed
-REG ADD HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate /v DisableOSUpgrade /t REG_DWORD /d 00000001 /f
+REG ADD HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate /v DisableOSUpgrade /t REG_DWORD /d 00000001 /f > NUL
 
 schtasks /CHANGE /TN "\Microsoft\Windows\Setup\GWXTriggers\Logon-5d" /DISABLE  > NUL 2> NUL
 schtasks /CHANGE /TN "\Microsoft\Windows\Setup\GWXTriggers\Logon-10s" /DISABLE  > NUL 2> NUL
